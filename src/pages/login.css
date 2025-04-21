@@ -1,12 +1,12 @@
 .login-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    font-family: 'Pretendard', sans-serif;
-    background-color: #fff;
-    padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Pretendard', sans-serif;
+  background-color: #fff;
+  padding: 24px;
   }
   
   .login-logo {
@@ -59,7 +59,7 @@
   .signup-link a {
     color: #adadad;
     text-decoration: underline;
-    font-weight: 500;
+    font-weight: 500px;
   }
 
 
