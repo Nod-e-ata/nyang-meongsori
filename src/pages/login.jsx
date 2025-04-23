@@ -7,7 +7,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
 
     const checkIdAvailability = async(id) => {
-        const response = await fetch('/api/check-id?usename=${id}');
+        const response = await fetch(`/api/check-id?usename=${id}`);
         const data = await response.json();
         return data.isAvailable;
     };
