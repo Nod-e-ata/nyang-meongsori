@@ -25,3 +25,51 @@
   width: 30px;
   height: 30px;
 }
+
+.content-wrapper {
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.profile-card {
+  width: 150px;
+  height: 220px;
+  background-color: var(--white);
+  border: 2px solid var(--primary);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.profile-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.user-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--black);
+  font-family: 'Pretendard', sans-serif;
+}
+
+.info-low {
+  margin-top: 25px;
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gray600);
+  font-family: 'Pretendard', sans-serif;
+}
+
+.home-banner {
+  height: 220px;
+  width: auto;
+}
