@@ -47,7 +47,7 @@ function Home() {
       </div>
 
       <div className="recommendation-section">
-        <div className="recommendation-title">고양아 프로필 추천</div>
+        <div className="recommendation-title">고양이 프로필 추천</div>
         <div className="cat-list">
           {[...Array(5)].map((_, idx) => (
             <CatProfileCard
