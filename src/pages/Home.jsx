@@ -5,6 +5,8 @@ import Topbar from '../components/Topbar';
 import plusIcon from '../assets/plus-icon.svg';
 import userIcon from '../assets/user-icon.svg';
 import banner from '../assets/banner.svg';
+import DogProfileCard from '../components/DogProfileCard';
+import CatProfileCard from '../components/CatProfileCard';
 
 function Home() {
   return (
@@ -28,6 +30,34 @@ function Home() {
         </div>
 
         <img src={banner} alt="Banner" className="home-banner" />
+      </div>
+
+      <div className="recommendation-section">
+        <div className="recommendation-title">강아지 프로필 추천</div>
+        <div className="dog-list">
+          {[...Array(5)].map((_, idx) => (
+            <DogProfileCard
+              key={idx}
+              name="이름"
+              breedGender="종 / 성별"
+              birth="생년월일"
+            />
+          ))}
+        </div>
+      </div>
+
+      <div className="recommendation-section">
+        <div className="recommendation-title">고양아 프로필 추천</div>
+        <div className="cat-list">
+          {[...Array(5)].map((_, idx) => (
+            <CatProfileCard
+              key={idx}
+              name="이름"
+              breedGender="종 / 성별"
+              birth="생년월일"
+            />
+          ))}
+        </div>
       </div>
 
       <button className="floating-button">

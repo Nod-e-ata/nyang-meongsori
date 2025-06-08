@@ -1,0 +1,35 @@
+.dog-card {
+  width: 180px;
+  height: 300px;
+  background-color: var(--white);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  box-sizing: border-box;
+}
+
+.dog-img {
+  width: 180px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.dog-name {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--black);
+  font-family: 'Pretendard', sans-serif;
+}
+
+.dog-info {
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gray600);
+  font-family: 'Pretendard', sans-serif;
+  text-align: center;
+}
