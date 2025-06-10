@@ -7,6 +7,7 @@ import userIcon from '../assets/user-icon.svg';
 import banner from '../assets/banner.svg';
 import DogProfileCard from '../components/DogProfileCard';
 import CatProfileCard from '../components/CatProfileCard';
+import FloatingButton from '../components/FloatingButton';
 
 function Home() {
   return (
@@ -60,9 +61,7 @@ function Home() {
         </div>
       </div>
 
-      <button className="floating-button">
-        <img src={plusIcon} alt="Plus Icon" className="plus-icon" />
-      </button>
+      <FloatingButton />
     </div>
   );
 }
