@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import './mypage.css';
+import './MyPage.css';
 import TopBar from '../components/TopBar';
 import userIcon from '../assets/user-icon.svg';
 
