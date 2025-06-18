@@ -1,0 +1,46 @@
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 32px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  height: 80px;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.topbar-nav {
+  display: flex;
+  gap: 30px;
+}
+
+.topbar-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.topbar-nav a:hover {
+  color: #ff6b00;
+}
+
+.topbar-user-icon img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
