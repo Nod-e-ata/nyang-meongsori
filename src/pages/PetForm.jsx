@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import './PetForm.css';
-import TopBar from '../components/TopBar';
+import TopBar from '../components/Topbar';
 
 const PetForm = () => {
   const [photo, setPhoto] = useState(null);
@@ -53,7 +53,7 @@ const PetForm = () => {
     };
 
     console.log('폼 제출 데이터:', formData);
-    alert('폼이 성공적으로 제출되었습니다.');
+    alert('반려견/묘가 등록되었습니다!');
   };
 
   return (

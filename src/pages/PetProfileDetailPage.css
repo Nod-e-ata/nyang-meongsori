@@ -1,0 +1,100 @@
+.pet-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .detail-container {
+    margin-top: 100px;
+    width: calc(100% - 200px);
+    display: flex;
+    justify-content: center;
+  }
+  
+  .detail-wrapper {
+    display: flex;
+    gap: 120px;
+  }
+  
+  .detail-left-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .detail-pet-image {
+    width: 470px;
+    height: 575px;
+    object-fit: cover;
+  }
+  
+  .detail-icon-text-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 470px;
+    gap: 15px;
+  }
+  
+  .detail-user-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .detail-user-name {
+    font-size: 20px;
+    font-family: 'Pretendard Bold';
+    color: black;
+  }
+  
+  .detail-right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .detail-pet-name {
+    font-size: 30px;
+    font-family: 'Pretendard SemiBold';
+    color: black;
+    margin-bottom: 30px;
+  }
+  
+  .detail-pet-info {
+    font-size: 20px;
+    font-family: 'Pretendard Medium';
+    color: var(--gray600);
+    margin-bottom: 15px;
+  }
+  
+  .detail-pet-contact {
+    font-size: 20px;
+    font-family: 'Pretendard Medium';
+    color: var(--gray600);
+    margin-bottom: 15px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .detail-pet-detail-title {
+    font-size: 20px;
+    font-family: 'Pretendard Medium';
+    color: black;
+    margin-bottom: 25px;
+  }
+  
+  .detail-box {
+    width: 500px;
+    padding: 30px;
+    background-color: white;
+    border: 0.5px solid var(--gray200);
+  }
+  
+  .detail-text {
+    font-size: 20px;
+    font-family: 'Pretendard Medium';
+    color: var(--gray600);
+    text-align: left;
+  }
