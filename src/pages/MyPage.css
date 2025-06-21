@@ -1,0 +1,131 @@
+.mypage-container {
+  padding: 460px 24px 40px 24px;
+  max-width: none;
+  margin: 0;
+  font-family: 'Pretendard', sans-serif;
+  background-color: #fff;
+}
+
+.mypage-profile-box {
+  width: 100%;
+  margin: 0 auto;
+  padding: 48px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 24px;
+  border: 1px solid #dbdbdb;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+  margin-bottom: 60px;
+}
+
+.mypage-avatar {
+  width: 222px;
+  height: 222px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.mypage-avatar img {
+  width: 222px;
+  height: 222px;
+  object-fit: cover;
+}
+
+.mypage-info {
+  flex-grow: 1;
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mypage-info-row {
+  display: flex;
+  align-items: baseline;
+  font-size: 20px;
+  color: #333;
+}
+
+.mypage-info-label {
+  width: 100px;
+  font-weight: 600;
+  color: #000;
+}
+
+.mypage-info-value {
+  flex: 1;
+}
+
+section {
+  margin-bottom: 48px;
+}
+
+section h2 {
+  text-align: left;
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.pet-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+  padding-left: 20px;
+}
+
+.pet-card {
+  width: 160px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.pet-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .mypage-profile-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+  }
+
+  .mypage-avatar {
+    width: 100px;
+    height: 100px;
+    font-size: 48px;
+  }
+
+  .mypage-info {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .mypage-info p {
+    font-size: 16px;
+  }
+
+  section h2 {
+    font-size: 18px;
+  }
+
+  .pet-card {
+    width: 140px;
+  }
+}
