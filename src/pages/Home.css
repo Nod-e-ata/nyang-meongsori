@@ -3,9 +3,9 @@
     height: 100vh;
     position: relative;
     background-color: var(--white);
-  }
+}
   
-  .floating-button {
+.floating-button {
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -19,22 +19,22 @@
     align-items: center;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
+}
   
-  .plus-icon {
+.plus-icon {
     width: 30px;
     height: 30px;
-  }
+}
   
-  .content-wrapper {
+.content-wrapper {
     margin-top: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
-  }
+}
   
-  .profile-card {
+.profile-card {
     width: 150px;
     height: 220px;
     background-color: var(--white);
@@ -45,21 +45,21 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-  }
+}
   
-  .profile-icon {
+.profile-icon {
     width: 50px;
     height: 50px;
-  }
+}
   
-  .user-name {
+.user-name {
     font-size: 16px;
     font-weight: 700;
     color: var(--black);
     font-family: 'Pretendard', sans-serif;
-  }
+}
   
-  .info-low {
+.info-low {
     margin-top: 25px;
     display: flex;
     gap: 10px;
@@ -67,21 +67,21 @@
     font-weight: 500;
     color: var(--gray600);
     font-family: 'Pretendard', sans-serif;
-  }
+}
   
-  .home-banner {
+.home-banner {
     height: 220px;
     width: auto;
-  }
+}
   
-  .recommendation-section {
+.recommendation-section {
     margin-top: 90px;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+}
   
-  .recommendation-title {
+.recommendation-title {
     font-size: 20px;
     font-weight: 600;
     color: var(--black);
@@ -89,22 +89,22 @@
     margin-bottom: 25px;
     align-self: flex-start;
     margin-left: 40px;
-  }
+}
   
-  .dog-list {
+.dog-list {
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
     padding: 0 40px;
     box-sizing: border-box;
-  }
+}
   
-  .cat-list {
+.cat-list {
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
     padding: 0 40px;
     box-sizing: border-box;
-  }
+}
