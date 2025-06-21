@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Topbar from '../components/Topbar';
 import FloatingButton from '../components/FloatingButton';
 import underIcon from '../assets/under-icon.svg';
@@ -6,6 +7,12 @@ import CatProfileCard from '../components/CatProfileCard';
 import './CatProfilePage.css';
 
 function CatProfilePage() {
+    const navigate = useNavigate();
+
+    const handleFloatingButtonClick = () => {
+      navigate('/pet-form');
+    };
+
   return (
     <div className="cat-profile-container">
       <Topbar />
@@ -33,8 +40,7 @@ function CatProfilePage() {
         </div>
 
       </div>
-
-      <FloatingButton />
+      <FloatingButton onClick={handleFloatingButtonClick} />
     </div>
   );
 }

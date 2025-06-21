@@ -1,0 +1,110 @@
+.home-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: var(--white);
+  }
+  
+  .floating-button {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    border: none;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .plus-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .content-wrapper {
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .profile-card {
+    width: 150px;
+    height: 220px;
+    background-color: var(--white);
+    border: 2px solid var(--primary);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  
+  .profile-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .user-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--black);
+    font-family: 'Pretendard', sans-serif;
+  }
+  
+  .info-low {
+    margin-top: 25px;
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--gray600);
+    font-family: 'Pretendard', sans-serif;
+  }
+  
+  .home-banner {
+    height: 220px;
+    width: auto;
+  }
+  
+  .recommendation-section {
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .recommendation-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--black);
+    font-family: 'Pretendard', sans-serif;
+    margin-bottom: 25px;
+    align-self: flex-start;
+    margin-left: 40px;
+  }
+  
+  .dog-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+  
+  .cat-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 0 40px;
+    box-sizing: border-box;
+  }

@@ -1,6 +1,7 @@
 import React from 'react';
 import './home.css';
 import Topbar from '../components/Topbar';
+import { useNavigate } from 'react-router-dom';
 
 import plusIcon from '../assets/plus-icon.svg';
 import userIcon from '../assets/user-icon.svg';
@@ -10,13 +11,26 @@ import CatProfileCard from '../components/CatProfileCard';
 import FloatingButton from '../components/FloatingButton';
 
 function Home() {
+  const navigate = useNavigate();
+
+  const handleFloatingButtonClick = () => {
+    navigate('/pet-form');
+  };
+
   return (
     <div className="home-container">
       <Topbar />
 
       <div className="content-wrapper">
         <div className="profile-card">
-          <img src={userIcon} alt="User Icon" className="profile-icon"/>
+          <img
+          src={userIcon}
+          alt="User Icon"
+          className="profile-icon"
+          onClick={() => navigate('/mypage')}
+          style={{ cursor: 'pointer' }}
+          />
+
           <div className="user-name">user</div>
 
           <div className="info-row">
@@ -60,8 +74,7 @@ function Home() {
           ))}
         </div>
       </div>
-
-      <FloatingButton />
+      <FloatingButton onClick={handleFloatingButtonClick} />
     </div>
   );
 }

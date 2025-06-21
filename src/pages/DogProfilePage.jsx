@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Topbar from '../components/Topbar';
 import FloatingButton from '../components/FloatingButton';
 import underIcon from '../assets/under-icon.svg';
@@ -6,6 +7,12 @@ import DogProfileCard from '../components/DogProfileCard';
 import './DogProfilePage.css';
 
 function DogProfilePage() {
+    const navigate = useNavigate();
+
+    const handleFloatingButtonClick = () => {
+      navigate('/pet-form');
+    };
+
   return (
     <div className="dog-profile-container">
       <Topbar />
@@ -31,8 +38,7 @@ function DogProfilePage() {
           ))}
         </div>
       </div>
-
-      <FloatingButton />
+      <FloatingButton onClick={handleFloatingButtonClick} />
     </div>
   );
 }
