@@ -1,21 +1,36 @@
 import React from 'react';
 import './home.css';
 import Topbar from '../components/Topbar';
+import { useNavigate } from 'react-router-dom';
 
 import plusIcon from '../assets/plus-icon.svg';
 import userIcon from '../assets/user-icon.svg';
 import banner from '../assets/banner.svg';
 import DogProfileCard from '../components/DogProfileCard';
 import CatProfileCard from '../components/CatProfileCard';
+import FloatingButton from '../components/FloatingButton';
 
 function Home() {
+  const navigate = useNavigate();
+
+  const handleFloatingButtonClick = () => {
+    navigate('/pet-form');
+  };
+
   return (
     <div className="home-container">
       <Topbar />
 
       <div className="content-wrapper">
         <div className="profile-card">
-          <img src={userIcon} alt="User Icon" className="profile-icon"/>
+          <img
+          src={userIcon}
+          alt="User Icon"
+          className="profile-icon"
+          onClick={() => navigate('/mypage')}
+          style={{ cursor: 'pointer' }}
+          />
+
           <div className="user-name">user</div>
 
           <div className="info-row">
@@ -47,7 +62,7 @@ function Home() {
       </div>
 
       <div className="recommendation-section">
-        <div className="recommendation-title">고양아 프로필 추천</div>
+        <div className="recommendation-title">고양이 프로필 추천</div>
         <div className="cat-list">
           {[...Array(5)].map((_, idx) => (
             <CatProfileCard
@@ -59,10 +74,7 @@ function Home() {
           ))}
         </div>
       </div>
-
-      <button className="floating-button">
-        <img src={plusIcon} alt="Plus Icon" className="plus-icon" />
-      </button>
+      <FloatingButton onClick={handleFloatingButtonClick} />
     </div>
   );
 }
