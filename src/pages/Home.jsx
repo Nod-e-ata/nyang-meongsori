@@ -1,5 +1,5 @@
 import React from 'react';
-import './home.css';
+import './Home.css';
 import Topbar from '../components/Topbar';
 import { useNavigate } from 'react-router-dom';
 
