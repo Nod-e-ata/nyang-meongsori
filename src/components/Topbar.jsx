@@ -33,7 +33,13 @@ function Topbar() {
           반려묘 프로필
         </span>
       </div>
-      <img src={userIcon} alt="User Icon" className="user-icon" />
+      <img
+        src={userIcon}
+        alt="User Icon"
+        className="user-icon"
+        style={{ cursor: 'pointer' }}
+        onClick={() => navigate('/mypage')}
+      />
     </div>
   );
 }
