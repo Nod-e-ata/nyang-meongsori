@@ -1,16 +1,16 @@
 .dog-profile-container {
-  padding: 250px 20px 20px 20px;
+  padding: 200px 20px 20px 20px;
 }
 
 .dog-section {
-  margin-top: 250px;
+  margin-top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0 20px; 
   box-sizing: border-box;
+  min-height: calc(100vh - 80px - 40px);
 }
-
 
 .dog-title {
   font-size: 24px;
@@ -92,4 +92,12 @@
 
 .dog-dropdown-option:hover {
   background-color: #f0f0f0;
+}
+
+.no-dog-message {
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+    font-size: 18px;
+    color: #666;
 }
