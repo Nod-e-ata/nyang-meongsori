@@ -6,6 +6,19 @@ import userIcon from '../assets/user-icon.svg';
 import dogPlaceholder from '../assets/dog-placeholder.svg';
 import catPlaceholder from '../assets/cat-placeholder.svg';
 
+const formatPhoneNumber = (phoneNumber) => {
+  if (!phoneNumber) return '정보 없음';
+
+  const cleaned = ('' + phoneNumber).replace(/\D/g, '');
+
+  const match = cleaned.match(/^(\d{3})(\d{3,4})(\d{4})$/);
+  
+  if (match) {
+    return `${match[1]}-${match[2]}-${match[3]}`;
+  }
+  return phoneNumber;
+};
+
 function PetProfileDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -156,7 +169,8 @@ function PetProfileDetailPage() {
                 <div className="detail-pet-info">중성화 여부: {displayNeutered}</div>
                 <div className="detail-pet-info">종: {petInfo.breed || '정보 없음'}</div>
                 <div className="detail-pet-info">생년월일: {petInfo.birthDate || '정보 없음'}</div>
-                <div className="detail-pet-contact">연락처: {petInfo.ownerPhoneNumber || '정보 없음'}</div> 
+                {/* 연락처 표시 부분 수정 */}
+                <div className="detail-pet-contact">연락처: {formatPhoneNumber(petInfo.ownerPhoneNumber)}</div> 
                 
                 <div className="detail-pet-detail-title">상세 정보</div>
                 <div className="detail-box">

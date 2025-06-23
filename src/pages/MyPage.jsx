@@ -6,6 +6,19 @@ import DogProfileCard from '../components/DogProfileCard';
 import CatProfileCard from '../components/CatProfileCard';
 import userIcon from '../assets/user-icon.svg';
 
+const formatPhoneNumber = (phoneNumber) => {
+  if (!phoneNumber) return '정보 없음';
+
+  const cleaned = ('' + phoneNumber).replace(/\D/g, '');
+  
+  const match = cleaned.match(/^(\d{2,3})(\d{3,4})(\d{4})$/);
+
+  if (match) {
+    return `${match[1]}-${match[2]}-${match[3]}`;
+  }
+  return phoneNumber;
+};
+
 const MyPage = () => {
   const [userInfo, setUserInfo] = useState(null);
   const [dogs, setDogs] = useState([]);
@@ -13,21 +26,6 @@ const MyPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-
-  const formatPhoneNumber = (num) => {
-    if (!num) return '';
-    const cleanNum = num.replace(/\D/g, '');
-    
-    if (cleanNum.length === 10) {
-      return cleanNum.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3');
-    } else if (cleanNum.length === 11) {
-      return cleanNum.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3');
-    } else if (cleanNum.length === 9) {
-      return cleanNum.replace(/(\d{2})(\d{3,4})(\d{4})/, '$1-$2-$3');
-    }
-    return num;
-  };
-
 
   useEffect(() => {
     const fetchUserInfo = async () => {
@@ -63,10 +61,7 @@ const MyPage = () => {
         }
 
         const apiResponse = await response.json();
-        console.log("백엔드로부터 받은 ApiResponse:", apiResponse);
-
         const userData = apiResponse.data;
-        console.log("파싱된 실제 사용자 및 반려동물 정보 (userData):", userData);
 
         setUserInfo({
             id: userData.username,
@@ -82,8 +77,6 @@ const MyPage = () => {
         setError(err.message);
         if (err.message.includes("Failed to fetch")) {
           alert("서버와 통신할 수 없습니다. 백엔드 서버가 실행 중인지 확인하세요.");
-          localStorage.removeItem('token');
-          navigate('/login');
         }
       } finally {
         setLoading(false);
@@ -129,7 +122,7 @@ const MyPage = () => {
             <div className="mypage-info-row">
               <span className="mypage-info-label">전화번호</span>
               <span className="mypage-info-value">
-                {userInfo.phone ? formatPhoneNumber(userInfo.phone) : '정보 없음'}
+                {formatPhoneNumber(userInfo.phone)}
               </span> 
             </div>
           </div>
