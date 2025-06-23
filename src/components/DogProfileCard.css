@@ -1,6 +1,5 @@
 .dog-card {
-  width: 180px;
-  height: 300px;
+  height: 330px;
   background-color: var(--white);
   border-radius: 10px;
   display: flex;
@@ -14,7 +13,10 @@
   width: 180px;
   height: 220px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .dog-name {
@@ -23,6 +25,10 @@
   font-weight: 500;
   color: var(--black);
   font-family: 'Pretendard', sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 20px);
 }
 
 .dog-info {
@@ -32,4 +38,8 @@
   color: var(--gray600);
   font-family: 'Pretendard', sans-serif;
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 20px);
 }

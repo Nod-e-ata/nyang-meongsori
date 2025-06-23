@@ -10,6 +10,7 @@ const PetForm = () => {
   const [selectedType, setSelectedType] = useState(null);
   const [name, setName] = useState('');
   const [birthDate, setBirthDate] = useState('');
+  const [breed, setBreed] = useState('');
   const [region, setRegion] = useState('');
   const [gender, setGender] = useState('');
   const [neuter, setNeuter] = useState('');
@@ -29,9 +30,10 @@ const PetForm = () => {
 
   const handleTypeClick = (type) => {
     setSelectedType(type);
+    setBreed('');
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!selectedType) return alert('견/묘를 선택해주세요.');
@@ -40,20 +42,70 @@ const PetForm = () => {
     if (!region) return alert('지역을 선택해주세요.');
     if (!gender) return alert('성별을 선택해주세요.');
     if (!neuter) return alert('중성화 여부를 선택해주세요.');
+    if (!photo) return alert('반려동물 사진을 추가해주세요.');
 
-    const formData = {
-      photo,
-      type: selectedType,
-      name,
-      birthDate,
-      region,
-      gender,
-      neuter,
-      description,
-    };
+    const serverGender = gender === '남자' ? 'MALE' : 'FEMALE';
+    const serverIsNeutered = neuter === '중성화 O' ? 'true' : 'false'; 
 
-    console.log('폼 제출 데이터:', formData);
-    alert('반려견/묘가 등록되었습니다!');
+    const formData = new FormData();
+    
+    formData.append('image', photo);
+    formData.append('name', name);
+    formData.append('birthDate', birthDate);
+    formData.append('breed', breed);
+    formData.append('location', region);
+    formData.append('gender', serverGender);
+    formData.append('isNeutered', serverIsNeutered);
+    formData.append('description', description);
+
+    const apiUrl = `/api/pets/${selectedType === 'dog' ? 'dogs' : 'cats'}`;
+    
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+      alert('로그인이 필요합니다. 다시 로그인해주세요.');
+      return;
+    }
+
+    try {
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+        body: formData,
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log('반려동물 등록 성공:', result);
+        alert('반려견/묘가 성공적으로 등록되었습니다!');
+        resetForm();
+      } else {
+        const errorData = await response.json();
+        console.error('반려동물 등록 실패:', errorData);
+        alert(`반려동물 등록 실패: ${errorData.message || '알 수 없는 오류'}`);
+      }
+    } catch (error) {
+      console.error('API 호출 중 오류 발생:', error);
+      alert('네트워크 오류가 발생했습니다. 다시 시도해주세요.');
+    }
+  };
+
+  const resetForm = () => {
+    setPhoto(null);
+    setPhotoPreview(null);
+    setSelectedType(null);
+    setName('');
+    setBirthDate('');
+    setBreed('');
+    setRegion('');
+    setGender('');
+    setNeuter('');
+    setDescription('');
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
   };
 
   return (
@@ -116,10 +168,20 @@ const PetForm = () => {
               <label>생년월일</label>
               <input
                 type="text"
-                placeholder="반려동물의 생년월일을 입력해주세요 ex)20240330"
+                placeholder="반려동물의 생년월일을 입력해주세요 ex)2000-01-01"
                 value={birthDate}
                 onChange={(e) => setBirthDate(e.target.value)}
               />
+            </div>
+
+            <div className="input-group">
+              <label>품종</label>
+              <input
+                type="text"
+                placeholder="반려동물의 품종을 입력해주세요"
+                value={breed}
+                onChange={(e) => setBreed(e.target.value)}
+                />
             </div>
 
             <div className="input-row">
